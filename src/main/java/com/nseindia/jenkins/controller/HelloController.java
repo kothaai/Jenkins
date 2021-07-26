@@ -7,6 +7,7 @@ public class HelloController {
 	@RequestMapping("/")  
 	public String hello()   
 	{  
+    System.out.println("Hello");
 	return "Hello!! Welcome to Jenkins";  
 	}  
 }
