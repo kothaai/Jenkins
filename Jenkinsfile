@@ -23,5 +23,8 @@ Thanks
 Kothaai R''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'poojaravi9810@gmail.com'
              }     
         }
+        stage('--Slack Notification--'){
+            steps{
+                slackSend channel: 'build', color: 'good', message: 'Welcome to jenkins Slack DSL', teamDomain: 'nseitindianbank', tokenCredentialId: 'slack-integration-using-DSL'
     }
 }
