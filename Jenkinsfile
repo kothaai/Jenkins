@@ -15,6 +15,11 @@ pipeline {
             steps {
                 sh "mvn package"
             }
+            stage('--EMail Notification--'){
+                mail bcc: '', body: '''Hi Welcome to Jenkins Email Alerts
+Thanks
+Kothaai R''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'poojaravi9810@gmail.com'
+                
         }
     }
 }
