@@ -29,11 +29,10 @@ Kothaai R''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'poojar
     }
 }
         stage('--SonarQube Analysis--'){
-            steps{
-                def mvnHome = tool name: 'maven-3', type: 'maven'
+           def mvnHome = tool name: 'maven-3', type: 'maven'
                 withSonarQubeEnv('LocalSonarQube')
                 sh "${mvnHome}/bin/mvn sonar:sonar"
     }
-}
+
 }
 }
