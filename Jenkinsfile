@@ -28,5 +28,12 @@ Kothaai R''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'poojar
                 slackSend channel: 'build', color: 'good', message: 'Welcome to jenkins Slack DSL', teamDomain: 'nseitindianbank', tokenCredentialId: 'slack-integration-using-DSL'
     }
 }
+        stage('--SonarQube Analysis--'){
+            steps{
+                def mvnHome = tool name: 'maven-3', type: 'maven'
+                with SonarQubeEnv('LocalSonarQube')
+                sh "${mvnHome}/bin/mvn sonar:sonar"
+    }
+}
 }
 }
