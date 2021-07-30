@@ -31,7 +31,7 @@ Kothaai R''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'poojar
         stage('--SonarQube Analysis--'){
             steps{
                 def mvnHome = tool name: 'maven-3', type: 'maven'
-                with SonarQubeEnv('LocalSonarQube')
+                withSonarQubeEnv('LocalSonarQube')
                 sh "${mvnHome}/bin/mvn sonar:sonar"
     }
 }
