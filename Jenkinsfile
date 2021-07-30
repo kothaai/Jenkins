@@ -29,10 +29,16 @@ Kothaai R''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'poojar
     }
 }
         stage('--SonarQube Analysis--'){
-            steps{
-                withSonarQubeEnv('LocalSonarQube')
-                sh "${mvnHome}/bin/mvn sonar:sonar"
-    }
+            steps {
+        script {
+          // requires SonarQube Scanner 2.8+
+          scannerHome = tool 'SonarQube Scanner 2.8'
+        }
+        withSonarQubeEnv('LocalSonarQube') {
+          sh "${scannerHome}/bin/sonar-scanner"
+        }
+      }
+
         }
 }
 }
