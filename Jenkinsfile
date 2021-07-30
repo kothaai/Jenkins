@@ -32,7 +32,7 @@ Kothaai R''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'poojar
             steps {
         script {
           // requires SonarQube Scanner 2.8+
-            ${scannerHome} = tool 'SonarQube Scanner 4.6.2.2472'
+            scannerHome = tool 'SonarQube Scanner 4.6.2.2472'
         }
         withSonarQubeEnv('LocalSonarQube') {
           sh "${scannerHome}/bin/sonar-scanner"
