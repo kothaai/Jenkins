@@ -16,7 +16,7 @@ pipeline {
                 sh "mvn package"
             }
         }
-        /* stage('--EMail Notification--'){
+       /* stage('--EMail Notification--'){
              steps{
                 mail bcc: '', body: '''Hi Welcome to Jenkins Email Alerts
 Thanks
